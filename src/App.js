@@ -1,4 +1,4 @@
-     import './App.css';
+import './App.css';
 import TaskListComponent from './components/containers/task-list';
 
 function App() {
