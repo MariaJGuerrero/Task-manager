@@ -24,9 +24,31 @@ const TaskListComponent = () => {
 
     
 
-    const changeCompleted = (id) => {
-        console.log('TO DO: cambiar el estado de una tarea')
-    }
+function completeTask (task){
+    console.log(task);
+    const index = tasks.indexOf(task);
+    const tempTasks =[...tasks];
+    tempTasks[index].completed = !tempTasks[index].completed;
+    setTasks(tempTasks);
+
+}
+
+function deleteTask(task){
+    console.log(task);
+    const index = tasks.indexOf(task);
+    const tempTasks =[...tasks];
+    tempTasks.splice(index, 1);
+    setTasks(tempTasks);
+}
+
+function addTask(task){
+    console.log(task);
+    const index = tasks.indexOf(task);
+    const tempTasks =[...tasks];
+    tempTasks.push(task);
+    setTasks(tempTasks);
+
+}
 
     return(
         <div className="col-12">
@@ -50,7 +72,11 @@ const TaskListComponent = () => {
                     <tbody>
                         {tasks.map((task, index) => {
                                 return(
-                                    <TaskComponent key={index} task={task} />
+                                    <TaskComponent 
+                                    key={index} 
+                                    task={task}
+                                    complete={completeTask}
+                                    remove={deleteTask} />
                                 )
                             }   
                         )}
@@ -58,7 +84,7 @@ const TaskListComponent = () => {
                     </tbody>
                 </table>
             </div>
-          <TaskForm />
+          <TaskForm  add={addTask}/>
         </div>
     );
 };
