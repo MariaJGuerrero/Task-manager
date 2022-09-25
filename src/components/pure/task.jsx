@@ -49,15 +49,14 @@ const TaskComponent = ({ task, complete, remove }) => {
             <span>{task.description}</span>
             </td>
             <td className="align-middle">
-                {/*TO DO:sustituir por un badge*/}
                 {taskLevelBadge()}
             </td>
             <td className="align-middle">
-                {/*TO DO:sustituir por un iconos*/}
                 {task.completed ? 
                 (<i onClick={() => complete(task)} className="bi-toggle-on task-action" style={{color: 'green' }}></i>) 
                 : 
-                (<i onClick={() => complete(task)} className="bi-toggle-off task-action" style={{color: 'grey'}}></i>)}
+                (<i onClick={() => complete(task)} className="bi-toggle-off task-action" style={{color: 'grey'}}></i>)
+                }
                 <i className="bi-trash task-action" style={{color: 'red'}} onClick={() => remove(task)}></i>
             </td>
         </tr>

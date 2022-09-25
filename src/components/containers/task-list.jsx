@@ -43,11 +43,9 @@ function deleteTask(task){
 
 function addTask(task){
     console.log(task);
-    const index = tasks.indexOf(task);
     const tempTasks =[...tasks];
     tempTasks.push(task);
     setTasks(tempTasks);
-
 }
 
     return(
