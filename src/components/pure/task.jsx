@@ -39,9 +39,19 @@ const TaskComponent = ({ task, complete, remove }) => {
         }
     }
 
+    const tasksCompleted = {
+        color: 'gray',
+        textDecoration: 'line-through'
+    }
+    
+    const tasksPending = {
+        fontWeight: 'bold',
+        color: 'tomato'
+    }
+
     return(
 
-        <tr className="fw-normal">
+        <tr className="fw-normal" style={task.completed ? tasksCompleted : tasksPending}>
             <th>
                <span className="ms-2">{task.name}</span> 
             </th>
